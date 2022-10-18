@@ -127,14 +127,18 @@ const Tarefas = () => {
           {toDos.map((toDo) =>
             !toDo.completed ? (
               <div
-                className="flex mb-4 items-center cursor-pointer hover:bg-gray-100 rounded-md p-4"
+                className="flex mb-4 items-center  hover:bg-gray-100 rounded-md p-4"
                 key={toDo.id}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleAlterTodo(toDo.id);
-                }}
               >
-                <p className="w-full text-grey-darkest">{toDo.title}</p>
+                <p
+                  className="w-full text-grey-darkest cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleAlterTodo(toDo.id);
+                  }}
+                >
+                  {toDo.title}
+                </p>
                 <button
                   className="flex-no-shrink  w-80 p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green-600 border-green-600 hover:bg-green-600"
                   onClick={() => setDoneToDo(toDo.id)}
